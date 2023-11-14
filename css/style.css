@@ -4,11 +4,31 @@
     box-sizing: border-box;
 }
 
-main{
+main,
+footer{
     padding: 2rem;
- }
+    text-align: center;
+}
 
 h1,
 div {
     margin-bottom: 2rem;
+}
+
+button{
+    padding: .5rem 1rem;
+    border: none;
+    background-color: rgb(210, 162, 255);
+}
+
+.text-green{
+    color: green;
+}
+
+.text-yellow{
+    color: goldenrod;
+}
+
+.text-seagreen{
+    color: lightseagreen;
 }

@@ -11,24 +11,43 @@
 </head>
 <body>
     <main>
-        <input type="number" id="input-distance">
+        <div>
+            <label for="input-distance">
+                Insert the distance you'd like to travel
+            </label>
+            <input type="number" id="input-distance">
+        </div>
 
-        <!-- <input type="number" id="input-age"> -->
-        <select name="select-age" id="select-age">
-            <option value="0">
-                Adult
-            </option>
-            <option value="1">
-                Teen
-            </option>
-            <option value="2">
-                Elder
-            </option>
-        </select>
-
+        <div>
+            <label for="select-age">
+                Select your age group
+            </label>
+            <!-- <input type="number" id="input-age"> -->
+            <select name="select-age" id="select-age">
+                <option value="0">
+                    Adult
+                </option>
+                <option value="1">
+                    Teen
+                </option>
+                <option value="2">
+                    Elder
+                </option>
+            </select>
+        </div>
 
         <button>Invia</button>
     </main>
+
+    <footer>
+        <div class="ticket-output">
+            <h2>
+                Your ticket costs:
+                <span id="output"> 0.00$</span>
+
+            </h2>
+        </div>
+    </footer>
 
     <script src="./js/script.js"></script>
 </body>
