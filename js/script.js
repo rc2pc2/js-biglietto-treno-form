@@ -1,31 +1,39 @@
-// // ? come aggiungere una classe ad un elemento esistente senza sovrascriverla
-// // const mainTitleElement = document.querySelector('h1.d-block');
-// // mainTitleElement.className = newElement.className + ' color-red';
+const pricePerKm = 0.1976;
+const teenDiscount = 1.0 - 0.1765;
+const elderDiscount = 1.0 - 0.5327;
 
-// const buttonElement = document.querySelector('button');
-// console.log('Gino va al mare');
+const distanceInputEl = document.querySelector('input#input-distance');
+const ageInputEl = document.querySelector('input#input-age');
+const generatorButton = document.querySelector('button')
 
-// buttonElement.addEventListener('click', function(){
-//     console.log('inizio funzione di callback');
-//     let somma = 5;
+// console.log(distanceInputEl, ageInputEl, generatorButton);
 
-//     const outputElement = document.getElementById('output');
-//     let outputElementValue = parseInt(outputElement.innerHTML);
-//     somma = somma + outputElementValue;
-//     outputElement.innerHTML = somma;
+//  ? ogni volta che clicco il bottone:
+generatorButton.addEventListener( 'click', function(){
+    // console.warn('click!');
 
-//     console.log('fine funzione di callback');
-// });
+    // # prendo il value di input-distance
+    const distance = parseFloat(distanceInputEl.value);
 
-// // console.log(somma); NOT DEFINED!!!!!
+    // # prendo il value di input-age
+    const age = parseInt(ageInputEl.value);
 
-// console.log('Gina va in montagna');
+    console.warn(distance, age);
 
-// // Gino va al mare
-// // Gina va in montagna
-// // Quando clicchero' avro' i due console log rimanenti
+    // # calcolo il prezzo del biglietto:
+        let totalPrice = pricePerKm * distance;
+
+        // # prezzoBiglietto * ( 1.0 - x) {in base all'eta'}
+        if ( age < 18 ){
+            // totalPrice *= teenDiscount;
+            totalPrice = totalPrice * teenDiscount;
+        } else if (age > 64 ){
+            // totalPrice *= elderDiscount;
+            totalPrice = totalPrice * elderDiscount;
+        }
+        // 17.65 minorenni, 53.27 anziani, costo base 0.1976 al km
+    // # scrivo in console il risultato
+    console.warn(totalPrice);
+});
 
 
-// // Gino va al mare
-// // Quando clicchero' avro' i due console log rimanenti
-// // E SOLTANTO DOPO Gina va in montagna
