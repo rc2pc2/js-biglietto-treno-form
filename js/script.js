@@ -13,17 +13,21 @@ ticketGeneratorBtn.addEventListener( 'click', function(){
 
     let totalPrice = pricePerKm * distance;
 
-    if ( ageGroup === 1 ){
-        totalPrice = totalPrice * teenDiscount;
-        outputElement.className = 'text-green';
-    } else if ( ageGroup === 2 ){
-        totalPrice = totalPrice * elderDiscount;
-        outputElement.className = 'text-yellow';
+    if (isNaN(distance) || isNaN(ageGroup)){
+        alert('Please type again your info')
     } else {
-        outputElement.className = 'text-seagreen';
+        if ( ageGroup === 1 ){
+            totalPrice = totalPrice * teenDiscount;
+            outputElement.className = 'text-green';
+        } else if ( ageGroup === 2 ){
+            totalPrice = totalPrice * elderDiscount;
+            outputElement.className = 'text-yellow';
+        } else {
+            outputElement.className = 'text-seagreen';
+        }
+
+
+        console.warn(distance, ageGroup, 'price: ',totalPrice);
+        outputElement.innerHTML = totalPrice.toFixed(2) + '&euro;';
     }
-
-
-    console.warn(distance, ageGroup, 'price: ',totalPrice);
-    outputElement.innerHTML = totalPrice.toFixed(2) + '&euro;';
 });
